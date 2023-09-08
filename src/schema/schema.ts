@@ -31,6 +31,16 @@ type Query {
     author(id: ID!): Author
 }
 
+type Mutation {
+    deleteReview(id: ID!): [Review]
+    deleteGame(id: ID!): [Game]
+    deleteAuthor(id: ID!): [Author]
+    createReview(rating: Int!, content: String!, author_id: ID!, game_id: ID!): Review
+    createGame(title: String!, platform: [String!]!): Game
+    createAuthor(name: String!, verified: Boolean!): Author
+    updateReview(id: ID!, rating: Int!, content: String!, author_id: ID!, game_id: ID!): Review
+}
+
 
 
 
